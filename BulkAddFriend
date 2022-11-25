@@ -1,0 +1,21 @@
+let addFriendElement;
+
+let friendstoAdd = document.querySelectorAll('[aria-label^="Add Friend"]');
+console.clear();
+console.log("Number of Friends to add : ",friendstoAdd.length);
+console.log("If the Number is smaller then total reactions then make sure scroll enough");
+
+var added=0;
+
+friendstoAdd.forEach(el=>{
+added++;
+var waitingTime=added*5000;
+if(added%20==0){ waitingTime=waitingTime+30000;}
+	
+	if(el!=undefined){
+		setTimeout(()=>{
+			el.click();
+			console.log("friend added."+added);
+		}, waitingTime)
+	}
+})
